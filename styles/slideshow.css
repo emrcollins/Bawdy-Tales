@@ -1,10 +1,7 @@
- * {box-sizing:border-box}
+@import 'reset.css';
+@import 'site-wide.css'
 
- body {
-  background-color: black;
-  margin: 0;
-  overflow: hidden;
- }
+ * {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
@@ -24,7 +21,7 @@
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
-/*  position: absolute;*/
+  position: absolute;
   top: 50%;
   width: auto;
   margin-top: -22px;
@@ -41,6 +38,10 @@
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -105,7 +106,7 @@
 .slideshow-container img {
 /*  height: 100vh;*/
   width: unset;
-  height: 80%;
+  height: calc(100% - 66px);
   display: block;
   margin: auto;
 }
