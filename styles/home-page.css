@@ -1,2 +1,76 @@
 @import 'reset.css';
-@import 'site-wide.css'
+@import 'site-wide.css';
+
+body {
+  display: flex;
+}
+
+/*div a img {
+  display: inline-block;
+/*  position: absolute;*/
+/*}
+*/
+
+div a img {
+
+}
+
+div a.ear img {
+  position: absolute;
+  top: 260px;
+  right: 500px;
+  width: 15%;
+}
+
+div a.eye img {
+  position: absolute;
+  top: 50px;
+  right: 350px;
+  width: 23%;
+}
+
+div a.foot img {
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  width: 30%;
+}
+
+
+
+/*div.about a img {
+  width: 50%;
+}*/
+
+div.about img {
+  width: 35%;
+  padding-bottom: 20px;
+}
+
+div.about img:last-child {
+  width: 30%;
+  padding-bottom: 0;
+}
+
+div.about img.title {
+  display: none;
+}
+
+div.about {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 100vh;
+}
+
+div.about a {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+/*  height: 100vh;
+  position: relative;
+  bottom: 0px;*/
+  margin-top: auto;
+  margin-left: 50px;
+}
+

@@ -5,24 +5,56 @@
     <link rel="stylesheet" href="styles/home-page.css" />
   </head>
   <body>
-    <div>
+    <div class="about">
       <a href="about.html">
+        <img id="title_1" class="title" src="assets/home-page/bawdytalestitle_small.png"
+             alt="Grapefruit slice atop a pile of other slices">
+        <img id="title_2" class="title" src="assets/home-page/bawdytalestitle_small.png"
+             alt="Grapefruit slice atop a pile of other slices">
+        <img id="title_3" class="title" src="assets/home-page/bawdytalestitle_small.png"
+             alt="Grapefruit slice atop a pile of other slices">
         <img src="assets/home-page/hansu_small.png"
              alt="Grapefruit slice atop a pile of other slices">
       </a>
     </div>
-    <div>
-      <div>
-      <div>
-        <a href="rear-symphony.html">
-          <img src="assets/home-page/ear_small.png"
-               alt="Grapefruit slice atop a pile of other slices">
-        </a>
-        <a href="brazilian-miracle.html">
-          <img src="assets/home-page/eye_small.png"
-               alt="Grapefruit slice atop a pile of other slices">
-        </a>
-        <a href="foot.html">foot</a>
+    <div class="stories">
+      <a href="rear-symphony.html" class="ear">
+        <img src="assets/home-page/ear_small.png"
+             alt="Grapefruit slice atop a pile of other slices">
+      </a>
+      <a href="brazilian-miracle.html" class="eye">
+        <img src="assets/home-page/eye_small.png"
+             alt="Grapefruit slice atop a pile of other slices">
+      </a>
+      <a href="foot.html" class="foot">
+        <img src="assets/home-page/foot_small.png"
+             alt="Grapefruit slice atop a pile of other slices">
+      </a>
     </div>
+    <script>
+      function titleFlash() {
+        console.log("titleflash is called")
+        var title1 = document.getElementById("title_1");
+        var title2 = document.getElementById("title_2");
+        var title3 = document.getElementById("title_3");
+        // var pos = 0;
+        setInterval(flash(title1), 3000);
+        setInterval(flash(title2), 5000);
+        setInterval(flash(title3), 7000);
+        function flash(title) {
+          console.log("flash function is called")
+          title.style.display = "inline-block";
+          // if (pos == 350) {
+          //   clearInterval(id);
+          // } else {
+          //   pos++;
+          //   elem.style.top = pos + "px";
+          //   elem.style.left = pos + "px";
+          // }
+        }
+      }
+
+      titleFlash()
+    </script>
   </body>
 </html>
