@@ -53,7 +53,7 @@ div.about img:last-child {
 }
 
 div.about img.title {
-  display: none;
+  visibility: hidden;
 }
 
 div.about {

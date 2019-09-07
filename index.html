@@ -32,29 +32,30 @@
       </a>
     </div>
     <script>
-      function titleFlash() {
-        console.log("titleflash is called")
-        var title1 = document.getElementById("title_1");
-        var title2 = document.getElementById("title_2");
-        var title3 = document.getElementById("title_3");
-        // var pos = 0;
-        setInterval(flash(title1), 3000);
-        setInterval(flash(title2), 5000);
-        setInterval(flash(title3), 7000);
-        function flash(title) {
-          console.log("flash function is called")
-          title.style.display = "inline-block";
-          // if (pos == 350) {
-          //   clearInterval(id);
-          // } else {
-          //   pos++;
-          //   elem.style.top = pos + "px";
-          //   elem.style.left = pos + "px";
-          // }
-        }
-      }
+      var count = 1
+      var interval = window.setInterval(function(){
+        if (count == 4){
+          var title1 = document.getElementById("title_1");
+          var title2 = document.getElementById("title_2");
+          var title3 = document.getElementById("title_3");
 
-      titleFlash()
+          title1.style.visibility = 'hidden';
+          title2.style.visibility = 'hidden';
+          title3.style.visibility = 'hidden';
+
+          count = 1;
+        } else {
+          var title = document.getElementById("title_" + count);
+          // var title2 = document.getElementById("title_2");
+          // var title3 = document.getElementById("title_3");
+          // if(title.style.display == 'none'){
+          title.style.visibility = 'visible';
+
+          count++
+        }
+
+
+      }, 1000);
     </script>
   </body>
 </html>
