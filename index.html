@@ -3,6 +3,7 @@
   <head>
     <title>Bawdy Tales</title>
     <link rel="stylesheet" href="styles/home-page.css" />
+    <script src="src/homePageAnimation.js" defer="true"></script>
   </head>
   <body>
     <div class="about">
@@ -19,7 +20,7 @@
     </div>
     <div class="stories">
       <a href="rear-symphony.html" class="ear">
-        <img src="assets/home-page/ear_small.png"
+        <img id="ear" src="assets/home-page/ear_small.png"
              alt="Grapefruit slice atop a pile of other slices">
       </a>
       <a href="brazilian-miracle.html" class="eye">
@@ -29,33 +30,9 @@
       <a href="foot.html" class="foot">
         <img src="assets/home-page/foot_small.png"
              alt="Grapefruit slice atop a pile of other slices">
+        <img id="redFoot" class="foot_red" src="assets/home-page/foot_red_small.png"
+             alt="Grapefruit slice atop a pile of other slices">
       </a>
     </div>
-    <script>
-      var count = 1
-      var interval = window.setInterval(function(){
-        if (count == 4){
-          var title1 = document.getElementById("title_1");
-          var title2 = document.getElementById("title_2");
-          var title3 = document.getElementById("title_3");
-
-          title1.style.visibility = 'hidden';
-          title2.style.visibility = 'hidden';
-          title3.style.visibility = 'hidden';
-
-          count = 1;
-        } else {
-          var title = document.getElementById("title_" + count);
-          // var title2 = document.getElementById("title_2");
-          // var title3 = document.getElementById("title_3");
-          // if(title.style.display == 'none'){
-          title.style.visibility = 'visible';
-
-          count++
-        }
-
-
-      }, 1000);
-    </script>
   </body>
 </html>

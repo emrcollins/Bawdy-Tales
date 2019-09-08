@@ -36,6 +36,10 @@ div a.foot img {
   width: 30%;
 }
 
+div a.foot img.red_foot {
+  visibility: hidden;
+}
+
 
 
 /*div.about a img {
@@ -73,4 +77,5 @@ div.about a {
   margin-top: auto;
   margin-left: 50px;
 }
+
 

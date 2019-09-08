@@ -1,22 +1,52 @@
+var titleCount = 1
+var spinEar = true
+// var titleInterval = window.setInterval(function(){
 
-function titleFlash() {
-  var title1 = document.getElementById("title_1");
-  var title2 = document.getElementById("title_2");
-  var title3 = document.getElementById("title_3");
-  // var pos = 0;
-  setInterval(flash(title1), 5);
-  setInterval(flash(title2), 15);
-  setInterval(flash(title3), 25);
-  function flash(title) {
-    title.style.display = "inline-block";
-    // if (pos == 350) {
-    //   clearInterval(id);
-    // } else {
-    //   pos++;
-    //   elem.style.top = pos + "px";
-    //   elem.style.left = pos + "px";
-    // }
+
+
+// }, 1000);
+
+// var footCount = 1
+
+var interval = window.setInterval(function(){
+
+  if (titleCount == 4){
+    var title1 = document.getElementById("title_1");
+    var title2 = document.getElementById("title_2");
+    var title3 = document.getElementById("title_3");
+
+    title1.style.visibility = 'hidden';
+    title2.style.visibility = 'hidden';
+    title3.style.visibility = 'hidden';
+
+    titleCount = 1;
+  } else {
+    var title = document.getElementById("title_" + titleCount);
+    // var title2 = document.getElementById("title_2");
+    // var title3 = document.getElementById("title_3");
+    // if(title.style.display == 'none'){
+    title.style.visibility = 'visible';
+
+    titleCount++
   }
-}
 
-titleFlash()
+  var redFoot = document.getElementById("redFoot");
+  if (redFoot.style.visibility == 'hidden') {
+    redFoot.style.visibility = 'visible'
+  } else {
+    redFoot.style.visibility = 'hidden'
+  }
+
+  var ear = document.getElementById("ear");
+
+  if (spinEar) {
+    ear.style.transform  = 'rotate(20deg)'
+    spinEar = false
+  } else {
+    ear.style.transform  = 'rotate(-20deg)'
+    spinEar = true
+  }
+
+
+}, 1000);
+
