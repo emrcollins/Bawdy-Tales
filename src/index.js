@@ -30,3 +30,7 @@ function showSlides(n) {
 }
 
 // export default plusSlides
+
+function createSlide() {
+
+}
