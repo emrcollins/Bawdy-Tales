@@ -3,7 +3,7 @@
 
 * {box-sizing:border-box}
 
-.slideshow-container {
+#slideshow-container {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -12,7 +12,7 @@
 }
 
 .mySlides {
-  display: none;
+  display: inline-block;
   width: auto;
   padding-bottom: 10px;
 }
@@ -51,6 +51,7 @@
   font-size: 50px;
   width: 100%;
   text-align: center;
+  line-height: 1.25;
 }
 
 .numbertext {
@@ -81,7 +82,7 @@
   to {opacity: 1}
 }
 
-.slideshow-container img {
+#slideshow-container img {
   width: unset;
   height: calc(100% - 66px);
   display: block;

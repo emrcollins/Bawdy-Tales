@@ -1,4 +1,4 @@
-{
+var data = {
   "title": "Brazilian Miracle",
   "path": "assets/brazilian-miracle/desktop/",
   "slides":
@@ -36,40 +36,3 @@
     ],
 }
 
-
-
-
-// <div class="mySlides fade">
-//   <img src="assets/brazilian-miracle/desktop/FireworksandBun.gif">
-//   <div class="text">Caption Text</div>
-// </div>
-
-// <div class="mySlides fade">
-//   <img src="assets/brazilian-miracle/desktop/handwax2.gif">
-//   <div class="text">Caption Two</div>
-// </div>
-
-// <div class="mySlides fade">
-//   <img src="assets/brazilian-miracle/desktop/eyeblink.gif">
-//   <div class="text">Caption Three</div>
-// </div>
-
-// <div class="mySlides fade">
-//   <img src="assets/brazilian-miracle/desktop/birds.gif">
-//   <div class="text">Caption Three</div>
-// </div>
-
-// <div class="mySlides fade">
-//   <img src="assets/brazilian-miracle/desktop/fireworks_wideshot.gif">
-//   <div class="text">Caption Three</div>
-// </div>
-
-// <div class="mySlides fade">
-//   <img src="assets/brazilian-miracle/desktop/raindrops.gif">
-//   <div class="text">Caption Three</div>
-// </div>
-
-// <div class="mySlides fade">
-//   <img src="assets/brazilian-miracle/desktop/flag.gif">
-//   <div class="text">Caption Three</div>
-// </div>

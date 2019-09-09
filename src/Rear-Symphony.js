@@ -1,4 +1,4 @@
-{
+var data = {
   "title": "Rear Symphony",
   "path": "assets/rear-symphony/desktop/",
   "slides":

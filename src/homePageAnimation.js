@@ -1,12 +1,5 @@
 var titleCount = 1
 var spinEar = true
-// var titleInterval = window.setInterval(function(){
-
-
-
-// }, 1000);
-
-// var footCount = 1
 
 var interval = window.setInterval(function(){
 
@@ -22,9 +15,7 @@ var interval = window.setInterval(function(){
     titleCount = 1;
   } else {
     var title = document.getElementById("title_" + titleCount);
-    // var title2 = document.getElementById("title_2");
-    // var title3 = document.getElementById("title_3");
-    // if(title.style.display == 'none'){
+
     title.style.visibility = 'visible';
 
     titleCount++
