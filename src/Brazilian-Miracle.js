@@ -4,34 +4,44 @@ var data = {
   "slides":
     [
       {"image": "handwax2.gif",
-        "text": "No I didn’t get a nudie wax. Way better."
+        "text": "No I didn’t get a nudie wax. Way better.",
+        "alt-text": "",
       },
       {"image": "eyeblink.gif",
-        "text": "My eyesight came back in my right eye."
+        "text": "My eyesight came back in my right eye.",
+        "alt-text": "",
       },
       {"image": "birds.gif",
-        "text": "Una Miracolo."
+        "text": "Una Miracolo.",
+        "alt-text": "",
       },
       {"image": null,
-        "text": "Don’t tell the media."
+        "text": "Don’t tell the media.",
+        "alt-text": "",
       },
       {"image": "fireworks_wideshot.gif",
-        "text": "I went to the symphony of fireworks off English Bay."
+        "text": "I went to the symphony of fireworks off English Bay.",
+        "alt-text": "",
       },
       {"image": "FireworksandBun.gif",
-        "text": "Between the bangs and the flashes breaking up at my nose..."
+        "text": "Between the bangs and the flashes breaking up at my nose...",
+        "alt-text": "",
       },
       {"image": "raindrops.gif",
-        "text": "I started to feel a bit odd.\nLight came up in my eye and it started to get stronger."
+        "text": "I started to feel a bit odd.\nLight came up in my eye and it started to get stronger.",
+        "alt-text": "",
       },
       {"image": "flag.gif",
-        "text": "Thank you, Brazil."
+        "text": "Thank you, Brazil.",
+        "alt-text": "",
       },
       {"image": "newspapereye.gif",
-        "text": "MIRACOLO! MIRACOLO!\nHELEN KELLER! CALL POPE!"
+        "text": "MIRACOLO! MIRACOLO!\nHELEN KELLER! CALL POPE!",
+        "alt-text": "",
       },
         {"image": null,
-        "text": "Still true to this day. Say what?"
+        "text": "Still true to this day. Say what?",
+        "alt-text": "",
       },
     ],
 }

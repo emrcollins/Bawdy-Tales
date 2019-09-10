@@ -4,19 +4,24 @@ var data = {
   "slides":
     [
       {"image": "DiaperPull.gif",
-        "text": "I was being changed one morning by a sweet, young Filipino fellow..."
+        "text": "I was being changed one morning by a sweet, young Filipino fellow...",
+        "alt-text": "",
       },
       {"image": "FartTransform.gif",
-        "text": "..when I let out a long singer."
+        "text": "..when I let out a long singer.",
+        "alt-text": "",
       },
       {"image": "lightiningbutts.gif",
-        "text": "I said “do you know why god made farts smell?”"
+        "text": "I said “do you know why god made farts smell?”",
+        "alt-text": "",
       },
       {"image": "sniff.gif",
-        "text": "“So the deaf can enjoy them too.”"
+        "text": "“So the deaf can enjoy them too.”",
+        "alt-text": "",
       },
       {"image": "rearsymphony.gif",
-        "text": "He laughed so long and hard, it matched my rear symphony."
+        "text": "He laughed so long and hard, it matched my rear symphony.",
+        "alt-text": "",
       },
     ],
 }
