@@ -5,11 +5,9 @@ createSlide(slideIndex);
 function createSlide(n) {
 
   var slides = data.slides
-
   var slideshowContainer = document.getElementById("slideshow-container");
 
   if (n > slides.length - 1) {slideIndex = 0}
-
   if (n < 0) {slideIndex = slides.length - 1}
 
   var currentSlide = slides[slideIndex]
