@@ -1,2 +1,21 @@
-@import 'reset.css';
-@import 'site-wide.css'
+/*@import 'reset.css';
+@import 'site-wide.css';*/
+@import 'slideshow.css';
+/*
+body {
+  display: flex;
+}*/
+
+div {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-direction: column;
+}
+
+div iframe {
+  margin: auto;
+}
+
+div p {
+  margin: auto;
+}
