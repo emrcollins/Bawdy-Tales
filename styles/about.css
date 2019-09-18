@@ -12,3 +12,10 @@ div iframe {
 div p {
   margin: auto;
 }
+
+div p.about {
+  color: white;
+  margin: 16px 92px;
+  font-size: 24px;
+  text-align: center;
+}

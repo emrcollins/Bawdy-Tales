@@ -15,24 +15,47 @@ div a img {
 
 }
 
+div.about {
+  width: 40%;
+}
+
+div.stories {
+  width: 60%;
+  display: inline-block;
+}
+
+div a.ear {
+  position: relative;
+  bottom: -37%;
+  right: -1%;
+/*  right: 314px;*/
+}
+
 div a.ear img {
-  position: absolute;
-  top: 260px;
-  right: 500px;
-  width: 15%;
+  width: 29%;
+}
+
+div a.eye {
+  position: relative;
+/*  top: -163px;
+  right: 219px;*/
+  /*bottom: 31%;*/
+  bottom: 18%;
+  right: 9%;
 }
 
 div a.eye img {
-  position: absolute;
-  top: 50px;
-  right: 350px;
-  width: 23%;
+  width: 43%;
 }
 
 div a.foot img {
   position: absolute;
-  top: 120px;
-  right: 60px;
+  top: 20%;
+  right: 2%;
+/*  width: 30%;*/
+}
+
+div a.foot img {
   width: 30%;
 }
 
@@ -47,12 +70,12 @@ div a.foot img.red_foot {
 }*/
 
 div.about img {
-  width: 35%;
+  width: 85%;
   padding-bottom: 20px;
 }
 
 div.about img:last-child {
-  width: 30%;
+  width: 87%;
   padding-bottom: 0;
 }
 
@@ -75,7 +98,7 @@ div.about a {
   position: relative;
   bottom: 0px;*/
   margin-top: auto;
-  margin-left: 50px;
+  margin-left: 15%;;
 }
 
 
