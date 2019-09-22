@@ -19,3 +19,13 @@ div p.about {
   font-size: 24px;
   text-align: center;
 }
+
+div.about-content {
+  justify-content: center;
+  height: 100vh;
+}
+
+div.video-player {
+  height: 50%;
+  padding-bottom: 2%;
+}

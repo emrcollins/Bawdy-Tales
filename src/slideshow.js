@@ -30,6 +30,7 @@ function createSlides() {
     } else {
       slideImg = document.createElement('img');
       slideImg.setAttribute('src', data.path + slide.image)
+      slideImg.setAttribute('alt-text', slide["alt-text"])
 
       var textHeight = (slide.text.split('\n').length - 1) * 60 + 75
       slideImg.style.height = 'calc(100% - ' + textHeight + 'px)'
