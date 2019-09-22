@@ -4,7 +4,7 @@ var data = {
   "slides":
     [
       {"image": null,
-        "text": "Been pondering the metamorphoses of our bodies… Mine went from ova, to curly legged baby to a gawky 5 foot 7 teen. ",
+        "text": "Been pondering the metamorphoses of our bodies…  \nMine went from ova, to curly legged baby to a gawky 5 foot 7 teen. ",
         "alt-text": "",
       },
       {"image": null,
