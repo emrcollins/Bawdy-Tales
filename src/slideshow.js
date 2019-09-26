@@ -42,14 +42,34 @@ function createSlides() {
     slideDiv.appendChild(slideText)
     slideshowContainer.appendChild(slideDiv)
 
-    //TODO: add alt-text to gifs
+    let slideAudio = document.createElement('audio')
+    slideAudio.setAttribute('autoplay', 'autoplay')
+    slideAudio.setAttribute('controls', 'controls')
+
+    let audioSource = document.createElement('source')
+    audioSource.setAttribute('src', data.path + slide.audio)
+    audioSource.setAttribute('type', '')
+
+    slideAudio.appendChild(audioSource);
+    slideDiv.appendChild(slideAudio);
+
+//      <audio controls autoplay>
+//   <source src="horse.ogg" type="audio/ogg">
+//   <source src="horse.mp3" type="audio/mpeg">
+//   Your browser does not support the audio element.
+// </audio>
+
     displaySlide(slideIndex)
   })
 
 }
 
 function displaySlide(n) {
-  if (n > slides.length - 1) {slideIndex = 0}
+  if (n > slides.length - 1) {
+    console.log("what is window", window)
+    window.location.replace = "http://www.bawdytales.net"
+    return;
+  }
   if (n < 0) {slideIndex = slides.length - 1}
 
   var slideDivs = slideshowContainer.querySelectorAll('.mySlides');
