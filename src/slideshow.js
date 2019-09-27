@@ -76,7 +76,7 @@ function displaySlide(n) {
     slideDiv.style.display = "none";
 
     let audio = slideDiv.querySelector('audio')
-    if(audio) audio.removeAttribute('autoplay')
+    if(audio) audio.pause()
   })
 
   slideDivs[slideIndex].style.display = "flex"
