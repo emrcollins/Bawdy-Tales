@@ -64,7 +64,7 @@ function createSlides() {
 
 function displaySlide(n) {
   if (n > slides.length - 1) {
-    window.location.replace = "http://www.bawdytales.net"
+    window.location.href = "/"
     return;
   }
 
