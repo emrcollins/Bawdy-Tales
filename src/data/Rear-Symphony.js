@@ -1,6 +1,6 @@
 var data = {
   "title": "Rear Symphony",
-  "path": "assets/rear-symphony/desktop/",
+  "path": "assets/rear-symphony/",
   "slides":
     [
       {"image": "DiaperPull.gif",
