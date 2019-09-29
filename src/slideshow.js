@@ -12,7 +12,6 @@ window.addEventListener("keydown", function(event) {
 
 function plusSlides(n) {
   displaySlide(slideIndex += n);
-  // playSlideSound(slideIndex += n);
 }
 
 function createSlides() {
@@ -20,19 +19,19 @@ function createSlides() {
     let slideDiv = document.createElement('div');
     slideDiv.setAttribute('class', 'mySlides fade')
 
-    // let slideImg
+
     let slideText = document.createElement('div');
     slideText.setAttribute('class', 'text');
+    slideText.setAttribute('tabindex', '4');
     slideText.innerText = slide.text.replace('\n', '\r\n')
-    //append 2 divs
-    if(!slide.image) {
 
+    if(!slide.image) {
       slideDiv.setAttribute('class', 'mySlides fade blank-slide')
     } else {
       slideImg = document.createElement('img');
       slideImg.setAttribute('src', data.path + 'desktop/' + slide.image)
-      console.log("slideImg", slide["alt-text"])
-      slideImg.setAttribute('alt-text', slide["alt-text"])
+      slideImg.setAttribute('alt', slide["alt-text"])
+      slideImg.setAttribute('tabindex', '3')
 
       var textHeight = (slide.text.split('\n').length - 1) * 60 + 75
       slideImg.style.height = 'calc(100% - ' + textHeight + 'px)'
@@ -43,22 +42,7 @@ function createSlides() {
     slideDiv.appendChild(slideText)
     slideshowContainer.appendChild(slideDiv)
 
-    // if(slide.audio){
-    //   let slideAudio = document.createElement('audio')
-    //   slideAudio.setAttribute('controls', 'controls')
-
-    //   let audioSource = document.createElement('source')
-    //   audioSource.setAttribute('src', data.path + 'audio/' + slide.audio)
-    //   // audioSource.setAttribute('type', 'audio/mp3')
-
-    //   slideAudio.appendChild(audioSource);
-    //   slideDiv.appendChild(slideAudio);
-    // }
-
-
-    // playSlideSound(slideIndex)
   })
-  // playSlideSound(0)
   displaySlide(0)
 }
 
@@ -80,64 +64,21 @@ function displaySlide(n) {
   })
 
   slideDivs[slideIndex].style.display = "flex"
-  // let audio = slideDivs[slideIndex].querySelector('audio')
-  // console.log('what is slideAudio', audio)
-  // let playAudio = audio.play()
 
-  // if (playAudio !== undefined) {
-  //   playAudio.then(_ => {
-  //     // Automatic playback started!
-  //     // Show playing UI.
-  //   })
-  //   .catch(error => {
-  //     // Auto-play was prevented
-  //     // Show paused UI.
-  //     console.log('error is:', error)
-  //   });
-  // }
-  // slideAudio.setAttribute('autoplay', 'autoplay')
 
   let slide = slides[n]
 
   if(slide.audio){
     let slideAudio = document.createElement('audio')
-    slideAudio.setAttribute('controls', 'controls')
     slideAudio.setAttribute('autoplay', 'autoplay')
 
     let audioSource = document.createElement('source')
     audioSource.setAttribute('src', data.path + 'audio/' + slide.audio)
-    // audioSource.setAttribute('type', 'audio/mp3')
 
     slideAudio.appendChild(audioSource);
     slideDivs[slideIndex].appendChild(slideAudio);
   }
 
 }
-
-// function playSlideSound(n) {
-//   // let slideAudio = new Audio(data.path + 'audio/' + slides[slideIndex].audio)
-//   // console.log("slideAudio is", slideAudio)
-//   // slideAudio.play()
-//   // // return slideAudio
-
-//   var slideDivs = slideshowContainer.querySelectorAll('.mySlides');
-
-//   let slide = slides[n]
-
-//   if(slide.audio){
-//     let slideAudio = document.createElement('audio')
-//     slideAudio.setAttribute('controls', 'controls')
-//     slideAudio.setAttribute('autoplay', 'autoplay')
-
-//     let audioSource = document.createElement('source')
-//     audioSource.setAttribute('src', data.path + 'audio/' + slide.audio)
-//     // audioSource.setAttribute('type', 'audio/mp3')
-
-//     slideAudio.appendChild(audioSource);
-//     // slideDiv.appendChild(slideAudio);
-//     slideDivs[slideIndex].appendChild(slideAudio)
-//   }
-// }
-
 createSlides()
 
