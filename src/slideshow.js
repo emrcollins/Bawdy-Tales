@@ -1,6 +1,6 @@
 var slideIndex = 0;
 var slides = data.slides
-var slideshowContainer = document.getElementById("slideshow-container");
+var slideshowContainer = document.body
 
 window.addEventListener("keydown", function(event) {
   if (event.key==="ArrowRight" || event.key===" "){
@@ -17,31 +17,37 @@ function plusSlides(n) {
 
 function createSlides() {
   slides.forEach((slide) => {
-    let slideDiv = document.createElement('div');
-    slideDiv.setAttribute('class', 'mySlides fade')
+
+    // slideDiv.setAttribute('class', 'mySlides fade')
 
     // let slideImg
     let slideText = document.createElement('div');
     slideText.setAttribute('class', 'text');
+    slideText.setAttribute('tabindex', '4')
     slideText.innerText = slide.text.replace('\n', '\r\n')
     //append 2 divs
     if(!slide.image) {
-
-      slideDiv.setAttribute('class', 'mySlides fade blank-slide')
+      // let slideDiv = document.createElement('div');
+      // slideDiv.setAttribute('class', 'slide-img fade blank-slide')
     } else {
       slideImg = document.createElement('img');
       slideImg.setAttribute('src', data.path + 'desktop/' + slide.image)
-      console.log("slideImg", slide["alt-text"])
-      slideImg.setAttribute('alt-text', slide["alt-text"])
+      slideImg.setAttribute('class', 'slide-img')
+      // console.log("slideImg", slide["alt-text"])
+      slideImg.setAttribute('alt', slide["alt-text"])
+      slideImg.setAttribute('tabindex', '3')
 
       var textHeight = (slide.text.split('\n').length - 1) * 60 + 75
-      slideImg.style.height = 'calc(100% - ' + textHeight + 'px)'
+      // slideImg.style.height = 'calc(100% - ' + textHeight + 'px)'
 
-      slideDiv.appendChild(slideImg);
+      // slideDiv.appendChild(slideImg);
+      slideshowContainer.appendChild(slideImg)
     }
 
-    slideDiv.appendChild(slideText)
-    slideshowContainer.appendChild(slideDiv)
+    slideshowContainer.appendChild(slideText)
+
+
+
 
     // if(slide.audio){
     //   let slideAudio = document.createElement('audio')
@@ -70,16 +76,23 @@ function displaySlide(n) {
 
   if (n < 0) {slideIndex = slides.length - 1}
 
-  var slideDivs = slideshowContainer.querySelectorAll('.mySlides');
-
-  slideDivs.forEach((slideDiv)=>{
+  var slideImgs = slideshowContainer.querySelectorAll('.slide-img');
+  var slideTexts = slideshowContainer.querySelectorAll('.text');
+  console.log('what is slideTexts', slideTexts)
+  slideImgs.forEach((slideDiv)=>{
+    // console.log("what is slideDiv", slideDiv)
     slideDiv.style.display = "none";
 
     let audio = slideDiv.querySelector('audio')
     if(audio) audio.pause()
   })
 
-  slideDivs[slideIndex].style.display = "flex"
+  slideTexts.forEach((slideText)=>{
+    slideText.style.display = "none";
+  })
+
+  slideImgs[slideIndex].style.display = "flex"
+  slideTexts[slideIndex].style.display = "inline-block"
   // let audio = slideDivs[slideIndex].querySelector('audio')
   // console.log('what is slideAudio', audio)
   // let playAudio = audio.play()
@@ -101,7 +114,7 @@ function displaySlide(n) {
 
   if(slide.audio){
     let slideAudio = document.createElement('audio')
-    slideAudio.setAttribute('controls', 'controls')
+    // slideAudio.setAttribute('controls', 'controls')
     slideAudio.setAttribute('autoplay', 'autoplay')
 
     let audioSource = document.createElement('source')
@@ -109,7 +122,7 @@ function displaySlide(n) {
     // audioSource.setAttribute('type', 'audio/mp3')
 
     slideAudio.appendChild(audioSource);
-    slideDivs[slideIndex].appendChild(slideAudio);
+    slideshowContainer.appendChild(slideAudio);
   }
 
 }

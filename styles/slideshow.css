@@ -18,6 +18,11 @@
   width: auto;
 }
 
+.slide-img {
+  height: calc(100vh - 75px);
+  margin: auto;
+}
+
 #slideshow-container img {
   width: unset;
   height: calc(100% - 66px);
