@@ -71,6 +71,7 @@ function displaySlide(n) {
   if(slide.audio){
     let slideAudio = document.createElement('audio')
     slideAudio.setAttribute('autoplay', 'autoplay')
+    slideAudio.setAttribute('controls', 'controls')
 
     let audioSource = document.createElement('source')
     audioSource.setAttribute('src', data.path + 'audio/' + slide.audio)
