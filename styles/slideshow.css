@@ -39,6 +39,17 @@ audio {
   width: 250px;
 }
 
+.audioControls {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+/**/
+}
+
+.audioControls .selected {
+  display: hidden;
+}
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
