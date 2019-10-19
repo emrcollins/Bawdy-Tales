@@ -1,6 +1,8 @@
 var titleCount = 1
 var spinEar = true
 
+
+
 var interval = window.setInterval(function(){
 
   if (titleCount == 4){
@@ -40,4 +42,12 @@ var interval = window.setInterval(function(){
 
 
 }, 1000);
+
+
+
+
+window.addEventListener("keydown", event => {
+  var modal = document.getElementById("modal");
+  modal.style.display = 'none'
+});
 
