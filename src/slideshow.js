@@ -2,15 +2,37 @@ var slideIndex = 0;
 var slides = data.slides
 var slideshowContainer = document.getElementById("slideshow-container");
 
-window.addEventListener("keydown", function(event) {
-  if (event.key==="ArrowRight" || event.key===" "){
-    plusSlides(1)
-  } else if (event.key==="ArrowLeft"){
-    plusSlides(-1)
-  }
-}, true);
-
 let audioPaused = false;
+// let startSlideShow = false;
+
+// window.addEventListener("keydown", function(event) {
+//   if (!startSlideShow && (event.key==="ArrowRight" || event.key===" ")) {
+//     displaySlide(0);
+//     startSlideShow = true;
+//     return;
+//   }
+
+//   if (event.key==="ArrowRight" || event.key===" "){
+//     plusSlides(1)
+//   } else if (event.key==="ArrowLeft"){
+//     plusSlides(-1)
+//   }
+// }, true);
+
+
+
+// function createTitleCard() {
+//   let slideDiv = document.createElement('div');
+//   slideDiv.setAttribute('class', 'mySlides fade')
+
+
+//   let slideText = document.createElement('div');
+//   slideText.setAttribute('class', 'text');
+//   slideText.setAttribute('tabindex', '4');
+//   slideText.innerText = data.title
+
+//   slideDiv.setAttribute('class', 'mySlides fade blank-slide')
+// }
 
 function plusSlides(n) {
   displaySlide(slideIndex += n);
@@ -44,10 +66,15 @@ function createSlides() {
     slideshowContainer.appendChild(slideDiv).appendChild(slideText)
 
   })
-  displaySlide(0)
+
+  displaySlide(0);
 }
 
 function displaySlide(n) {
+  if (n==='title') {
+
+  }
+
   if (n > slides.length - 1) {
     window.location.href = "/"
     return;
