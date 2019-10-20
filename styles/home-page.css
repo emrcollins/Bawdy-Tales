@@ -118,16 +118,21 @@ div.about a {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: black;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-  height: 80%;
-  background-image: url(../assets/home-page/modal_background.jpg);
-  background-position: center;
-  color: white;
-  background-size: cover;
-}
 
+  width: 80%; /* Could be more or less, depending on screen size */
+  height: 75vh;
+  border-width: 20px;
+  border-style: solid;
+  border-image: url(../assets/home-page/modal_background.jpg) 50;
+
+/*  background-position: center;*/
+  color: white;
+/*  background-size: cover;*/
+  font-size: 50px;
+  text-align: center;
+  overflow: scroll;
+}
 

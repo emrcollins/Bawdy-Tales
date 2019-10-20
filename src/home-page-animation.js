@@ -1,6 +1,6 @@
 var titleCount = 1
 var spinEar = true
-
+// var visited = false
 
 
 var interval = window.setInterval(function(){
@@ -43,11 +43,33 @@ var interval = window.setInterval(function(){
 
 }, 1000);
 
+function displayIntroCard() {
+  let modal = document.createElement('div')
+  modal.setAttribute('id', 'modal')
 
+  let modalContent = document.createElement('div')
+  modalContent.setAttribute('class', 'modal-content')
+  modalContent.textContent = '  You are about to enter a site that is made up of a collection of true stories written by Hansu Siirala. You may hit any icon to hear or view a story. Click on the photo of Hansu or the site title to learn more about the project. Click any key to continue.'
+
+  modal.appendChild(modalContent)
+
+  document.body.prepend(modal)
+}
+
+if (window.sessionStorage.getItem('visited')=='false') {
+  displayIntroCard()
+}
 
 
 window.addEventListener("keydown", event => {
   var modal = document.getElementById("modal");
   modal.style.display = 'none'
+  window.sessionStorage.setItem('visited', true)
+});
+
+window.addEventListener('click', event => {
+  var modal = document.getElementById("modal");
+  modal.style.display = 'none'
+  window.sessionStorage.setItem('visited', true)
 });
 
