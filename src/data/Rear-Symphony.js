@@ -1,5 +1,6 @@
 var data = {
   "title": "Rear Symphony",
+  "color": "cdf39c",
   "path": "assets/rear-symphony/",
   "slides":
     [

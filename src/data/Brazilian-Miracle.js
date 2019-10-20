@@ -1,5 +1,6 @@
 var data = {
   "title": "Brazilian Miracle",
+  "color": "f09696",
   "path": "assets/brazilian-miracle/",
   "slides":
     [

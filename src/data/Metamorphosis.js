@@ -1,5 +1,6 @@
 var data = {
-  "title": "Brazilian Miracle",
+  "title": "Metamorphosis",
+  "color": "9ceff3",
   "path": "assets/metamorphosis/desktop/",
   "slides":
     [
