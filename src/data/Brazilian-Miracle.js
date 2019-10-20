@@ -42,7 +42,7 @@ var data = {
       {"image": "flag.gif",
         "text": "Thank you, Brazil.",
         "alt-text": "No illustration.",
-        "audio":"",
+        "audio":"BM_Brazil flags.mp3",
       },
       {"image": "newspapereye.gif",
         "text": "MIRACOLO! MIRACOLO!\nHELEN KELLER! CALL POPE!",
