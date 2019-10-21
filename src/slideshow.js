@@ -99,6 +99,7 @@ function displaySlide(n) {
 
     slideDivs[slideIndex].append(slideAudio, audioControls);
   } else if (currentSlideAudio) {
+    currentSlideAudio.currentTime = 0
     currentSlideAudio.play()
   }
 
