@@ -27,17 +27,10 @@
 
 .mySlides {
   width: auto;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
 }
-
-/*audio {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 250px;
-}*/
 
 .audioControls {
   position: absolute;
@@ -54,9 +47,6 @@
   background-color: unset;
 }
 
-/*.audioControls .selected {
-  display: hidden;
-}*/
 
 .prev, .next {
   cursor: pointer;
@@ -70,7 +60,6 @@
   border-radius: 0 3px 3px 0;
   user-select: none;
   background-color: rgba(0,0,0,0.8);
-/*  border: none;*/
 }
 
 
@@ -117,4 +106,10 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+.title-slide {
+  font-family: 'Staatliches';
+  text-transform: uppercase;
+
 }

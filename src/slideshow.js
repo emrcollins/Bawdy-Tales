@@ -3,36 +3,35 @@ var slides = data.slides
 var slideshowContainer = document.getElementById("slideshow-container");
 
 let audioPaused = false;
-// let startSlideShow = false;
+let startSlideShow = false;
 
-// window.addEventListener("keydown", function(event) {
-//   if (!startSlideShow && (event.key==="ArrowRight" || event.key===" ")) {
-//     displaySlide(0);
-//     startSlideShow = true;
-//     return;
-//   }
-
-//   if (event.key==="ArrowRight" || event.key===" "){
-//     plusSlides(1)
-//   } else if (event.key==="ArrowLeft"){
-//     plusSlides(-1)
-//   }
-// }, true);
+window.addEventListener("keydown", function(event) {
+  if (event.key==="ArrowRight" || event.key===" "){
+    plusSlides(1)
+  } else if (event.key==="ArrowLeft"){
+    plusSlides(-1)
+  }
+}, true);
 
 
+function createTitleCard() {
+  let slideDiv = document.createElement('div');
+  slideDiv.setAttribute('class', 'mySlides fade')
 
-// function createTitleCard() {
-//   let slideDiv = document.createElement('div');
-//   slideDiv.setAttribute('class', 'mySlides fade')
 
+  let slideText = document.createElement('div');
+  slideText.setAttribute('class', 'text');
+  slideText.setAttribute('tabindex', '4');
+  slideText.style.color = `#${data.color}`
+  slideText.innerText = data.title
 
-//   let slideText = document.createElement('div');
-//   slideText.setAttribute('class', 'text');
-//   slideText.setAttribute('tabindex', '4');
-//   slideText.innerText = data.title
+  slideDiv.setAttribute('class', 'mySlides fade title-slide')
+  slideDiv.style.display = 'flex'
 
-//   slideDiv.setAttribute('class', 'mySlides fade blank-slide')
-// }
+  slideDiv.appendChild(slideText)
+
+  slideshowContainer.append(slideDiv)
+}
 
 function plusSlides(n) {
   displaySlide(slideIndex += n);
@@ -66,15 +65,9 @@ function createSlides() {
     slideshowContainer.appendChild(slideDiv).appendChild(slideText)
 
   })
-
-  displaySlide(0);
 }
 
 function displaySlide(n) {
-  if (n==='title') {
-
-  }
-
   if (n > slides.length - 1) {
     window.location.href = "/"
     return;
@@ -88,20 +81,25 @@ function displaySlide(n) {
     slideDiv.style.display = "none";
 
     let audio = slideDiv.querySelector('audio')
+
     if(audio) audio.pause()
   })
 
   slideDivs[slideIndex].style.display = "flex"
 
 
-  let slide = slides[n]
+  let slide = slides[n-1]
 
-  if(slide.audio){
+  let currentSlideAudio = slideDivs[n].querySelector('audio')
+
+  if(slide.audio && !currentSlideAudio){
 
     let slideAudio = createAudio(slide)
-    let audioControls = createAudioControls()
+    let audioControls = createAudioControls(slideDivs[n])
 
     slideDivs[slideIndex].append(slideAudio, audioControls);
+  } else if (currentSlideAudio) {
+    currentSlideAudio.play()
   }
 
 }
@@ -110,7 +108,7 @@ function createAudio(slide) {
   let slideAudio = document.createElement('audio')
   slideAudio.setAttribute('autoplay', 'autoplay')
   slideAudio.setAttribute('loop', 'loop')
-  slideAudio.setAttribute('id', 'player')
+  slideAudio.setAttribute('class', 'player')
 
   let audioSource = document.createElement('source')
   audioSource.setAttribute('src', data.path + 'audio/' + slide.audio)
@@ -120,15 +118,21 @@ function createAudio(slide) {
   return slideAudio
 }
 
+// function switchAudio(slide) {
+//   let slideAudio = document.getElementById('player').
 
-function createAudioControls() {
+// }
+
+
+function createAudioControls(currentSlideDiv) {
+  console.log("what is currentSlideDiv", currentSlideDiv)
   let playPauseButton = document.createElement('button')
 
   playPauseButton.setAttribute('name', 'pause sound')
-  playPauseButton.setAttribute('id', 'playPause')
+  playPauseButton.setAttribute('class', 'playPause')
 
   let playSpan = document.createElement('span')
-  playSpan.setAttribute('id', 'play')
+  playSpan.setAttribute('class', 'play')
   playSpan.innerHTML = '&#9654;'
   playSpan.style.color = 'gray'
 
@@ -136,26 +140,26 @@ function createAudioControls() {
   slashSpan.innerHTML = '/'
 
   let pauseSpan = document.createElement('span')
-  pauseSpan.setAttribute('id', 'pause')
+  pauseSpan.setAttribute('class', 'pause')
   pauseSpan.innerHTML = '&#10073;&#10073;'
 
   playPauseButton.append(playSpan, slashSpan, pauseSpan)
 
   playPauseButton.addEventListener('click', event => {
-    let player = document.getElementById('player')
+    let player = currentSlideDiv.querySelector('.player')
 
     if (audioPaused) {
       player.play()
       playPauseButton.setAttribute('name', 'pause sound')
-      document.getElementById('play').style.color = 'gray'
-      document.getElementById('pause').style.color = 'black'
+      currentSlideDiv.querySelector('.play').style.color = 'gray'
+      currentSlideDiv.querySelector('.pause').style.color = 'black'
 
       audioPaused = false
     } else {
       player.pause()
       playPauseButton.setAttribute('name', 'play sound')
-      document.getElementById('play').style.color = 'black'
-      document.getElementById('pause').style.color = 'gray'
+      currentSlideDiv.querySelector('.play').style.color = 'black'
+      currentSlideDiv.querySelector('.pause').style.color = 'gray'
 
       audioPaused = true
 
@@ -166,36 +170,36 @@ function createAudioControls() {
   decreaseVolumeButton.setAttribute('name', 'decrease volume')
   decreaseVolumeButton.innerHTML = '&#8722'
   decreaseVolumeButton.addEventListener('click', event => {
-    document.getElementById('player').volume -= 0.1
+    currentSlideDiv.querySelector('.player').volume -= 0.1
   })
 
   let increaseVolumeButton = document.createElement('button')
   increaseVolumeButton.setAttribute('name', 'increase volume')
   increaseVolumeButton.innerHTML = '&#43;'
   increaseVolumeButton.addEventListener('click', event => {
-    document.getElementById('player').volume += 0.1
+    currentSlideDiv.querySelector('.player').volume += 0.1
   })
 
 
   let muteButton = document.createElement('button')
   muteButton.setAttribute('name', 'mute sound')
-  muteButton.setAttribute('id', 'mute')
+  muteButton.setAttribute('class', 'mute')
   muteButton.innerHTML = '&#128263;&#xFE0E;'
   muteButton.addEventListener('click', event => {
-    document.getElementById('player').muted = true
+    currentSlideDiv.querySelector('.player').muted = true
     muteButton.style.display = 'none'
-    document.getElementById('unmute').style.display ='inline'
+    currentSlideDiv.querySelector('.unmute').style.display ='inline'
   })
 
   let unmuteButton = document.createElement('button')
   unmuteButton.style.display = 'none'
   unmuteButton.setAttribute('name', 'unmute sound')
-  unmuteButton.setAttribute('id', 'unmute')
+  unmuteButton.setAttribute('class', 'unmute')
   unmuteButton.innerHTML = '&#128264;&#xFE0E;'
   unmuteButton.addEventListener('click', event => {
-    document.getElementById('player').muted = false
+    currentSlideDiv.querySelector('.player').muted = false
     unmuteButton.style.display = 'none'
-    document.getElementById('mute').style.display ='inline'
+    currentSlideDiv.querySelector('.mute').style.display ='inline'
   })
 
   let audioControls = document.createElement('div')
@@ -205,5 +209,7 @@ function createAudioControls() {
   return audioControls;
 }
 
+createTitleCard()
 createSlides()
+
 
