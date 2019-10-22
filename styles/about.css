@@ -16,7 +16,7 @@ div p {
 div.about {
   color: white;
   margin: 16px 92px;
-  font-size: 24px;
+  font-size: 4vh;
   text-align: center;
 }
 
@@ -26,6 +26,6 @@ div.about-content {
 }
 
 div.video-player {
-  height: 50%;
-  padding-bottom: 2%;
+  height: 75%;
+  padding-top: 2%;
 }

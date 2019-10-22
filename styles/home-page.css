@@ -32,42 +32,33 @@ div a.ear {
 }
 
 div a.ear img {
-  width: 29%;
+  height: 48vh;
 }
 
 div a.eye {
-  position: relative;
+  position: absolute;
 /*  top: -163px;
   right: 219px;*/
   /*bottom: 31%;*/
-  bottom: 18%;
-  right: 9%;
+  bottom: 65%;
+  right: 25%;
 }
 
 div a.eye img {
-  width: 43%;
+  height: 25vh;
 }
 
-div a.foot img {
+div a.foot {
   position: absolute;
   top: 20%;
   right: 2%;
-/*  width: 30%;*/
+
 }
 
 div a.foot img {
-  width: 30%;
+  height: 78vh;
 }
 
-div a.foot img.red_foot {
-  visibility: hidden;
-}
-
-
-
-/*div.about a img {
-  width: 50%;
-}*/
 
 div.about img {
   width: 85%;

@@ -23,12 +23,15 @@ var interval = window.setInterval(function(){
     titleCount++
   }
 
-  var redFoot = document.getElementById("redFoot");
-  if (redFoot.style.visibility == 'hidden') {
-    redFoot.style.visibility = 'visible'
+  var footImg = document.getElementById('foot')
+
+  if (footImg.getAttribute('src')==='assets/home-page/foot_small.png'){
+    footImg.setAttribute('src', 'assets/home-page/foot_red_small.png')
   } else {
-    redFoot.style.visibility = 'hidden'
+    footImg.setAttribute('src', 'assets/home-page/foot_small.png')
   }
+
+
 
   var ear = document.getElementById("ear");
 
