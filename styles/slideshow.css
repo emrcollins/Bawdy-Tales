@@ -32,6 +32,10 @@
   justify-content: center;
 }
 
+.mySlides img:focus {
+  outline: unset;
+}
+
 .audioControls {
   position: absolute;
   right: 10px;
@@ -90,6 +94,10 @@
   text-align: center;
   line-height: 1.25;
   padding-bottom: 10px;
+}
+
+.text:focus {
+  outline: unset;
 }
 
 .fade {

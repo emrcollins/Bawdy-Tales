@@ -206,7 +206,6 @@ function createAudioControls(currentSlideDiv) {
       currentSlideDiv.querySelector('.pause').style.color = 'gray'
 
       window.sessionStorage.setItem('paused', 'true')
-
     }
 
   })
