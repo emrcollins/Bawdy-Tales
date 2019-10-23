@@ -2,6 +2,7 @@ var data = {
   "title": "Brazilian Miracle",
   "color": "f09696",
   "path": "assets/brazilian-miracle/",
+  "video": "https://player.vimeo.com/video/367596007",
   "slides":
     [
       {"image": "handwax2.gif",

@@ -112,5 +112,18 @@
 .title-slide {
   font-family: 'Staatliches';
   text-transform: uppercase;
+}
 
+.title-slide .text {
+  width: 100%;
+  font-size: 7vw;
+}
+
+.end-slide {
+  width: 100%;
+}
+
+.end-slide iframe {
+  width: 100%;
+  height: 100%;
 }

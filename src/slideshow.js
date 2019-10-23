@@ -3,7 +3,8 @@ var slides = data.slides
 var slideshowContainer = document.getElementById("slideshow-container");
 
 let audioPaused = false;
-let startSlideShow = false;
+// let startSlideShow = false;
+let endSlideShow = false;
 
 window.addEventListener("keydown", function(event) {
   if (event.key==="ArrowRight" || event.key===" "){
@@ -15,22 +16,49 @@ window.addEventListener("keydown", function(event) {
 
 
 function createTitleCard() {
-  let slideDiv = document.createElement('div');
-  slideDiv.setAttribute('class', 'mySlides fade')
-
-
-  let slideText = document.createElement('div');
-  slideText.setAttribute('class', 'text');
-  slideText.setAttribute('tabindex', '4');
-  slideText.style.color = `#${data.color}`
-  slideText.innerText = data.title
-
-  slideDiv.setAttribute('class', 'mySlides fade title-slide')
+  let slideDiv = createSlide('title-slide', data.title)
   slideDiv.style.display = 'flex'
-
-  slideDiv.appendChild(slideText)
+  slideDiv.querySelector('.text').style.color = `#${data.color}`
 
   slideshowContainer.append(slideDiv)
+}
+
+
+function createEndCard() {
+  let slideDiv = createSlide('end-slide')
+
+  if(data.video) {
+      let vimeoEmbed = document.createElement('iframe')
+    vimeoEmbed.setAttribute('src', data.video)
+    vimeoEmbed.setAttribute('frameborder', '0')
+    vimeoEmbed.setAttribute('allow', 'autoplay; fullscreen')
+    vimeoEmbed.setAttribute('allowfullscreen', 'allowfullscreen')
+
+    slideDiv.appendChild(vimeoEmbed)
+  } else {
+    return null;
+  }
+
+  slideDiv.style.display = 'flex'
+
+  return slideDiv
+}
+
+function createSlide(extraClass, text) {
+  let slideDiv = document.createElement('div');
+  slideDiv.setAttribute('class', `mySlides fade ${extraClass}`)
+
+  if (text) {
+    let slideText = document.createElement('div');
+    slideText.setAttribute('class', 'text');
+    slideText.setAttribute('tabindex', '4');
+
+    slideText.innerText = text.replace('\n', '\r\n')
+
+    slideDiv.appendChild(slideText)
+  }
+
+  return slideDiv
 }
 
 function plusSlides(n) {
@@ -39,14 +67,8 @@ function plusSlides(n) {
 
 function createSlides() {
   slides.forEach((slide) => {
-    let slideDiv = document.createElement('div');
-    slideDiv.setAttribute('class', 'mySlides fade')
 
-
-    let slideText = document.createElement('div');
-    slideText.setAttribute('class', 'text');
-    slideText.setAttribute('tabindex', '4');
-    slideText.innerText = slide.text.replace('\n', '\r\n')
+    let slideDiv = createSlide('', slide.text)
 
     if(!slide.image) {
       slideDiv.setAttribute('class', 'mySlides fade blank-slide')
@@ -59,21 +81,22 @@ function createSlides() {
       var textHeight = (slide.text.split('\n').length - 1) * 60 + 75
       slideImg.style.height = 'calc(100% - ' + textHeight + 'px)'
 
-      slideDiv.appendChild(slideImg);
+      slideDiv.prepend(slideImg);
     }
 
-    slideshowContainer.appendChild(slideDiv).appendChild(slideText)
+    slideshowContainer.appendChild(slideDiv)
 
   })
 }
 
 function displaySlide(n) {
-  if (n > slides.length - 1) {
+
+  if (n > slides.length) {
     window.location.href = "/"
     return;
   }
 
-  if (n < 0) {slideIndex = slides.length - 1}
+  // if (n < 0) {slideIndex = slides.length - 1}
 
   var slideDivs = slideshowContainer.querySelectorAll('.mySlides');
 
@@ -85,7 +108,17 @@ function displaySlide(n) {
     if(audio) audio.pause()
   })
 
-  slideDivs[slideIndex].style.display = "flex"
+  if (n === slides.length) {
+    let endCard = createEndCard()
+    console.log("what is end card", endCard)
+    if (!endCard) {
+      window.location.href = "/"
+      return;
+    }
+    slideshowContainer.appendChild(endCard)
+  } else {
+    slideDivs[slideIndex].style.display = "flex"
+  }
 
 
   let slide = slides[n-1]
@@ -119,14 +152,8 @@ function createAudio(slide) {
   return slideAudio
 }
 
-// function switchAudio(slide) {
-//   let slideAudio = document.getElementById('player').
-
-// }
-
 
 function createAudioControls(currentSlideDiv) {
-  console.log("what is currentSlideDiv", currentSlideDiv)
   let playPauseButton = document.createElement('button')
 
   playPauseButton.setAttribute('name', 'pause sound')

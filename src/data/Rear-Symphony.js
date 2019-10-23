@@ -2,6 +2,7 @@ var data = {
   "title": "Rear Symphony",
   "color": "cdf39c",
   "path": "assets/rear-symphony/",
+  "video": "https://vimeo.com/367596097",
   "slides":
     [
       {"image": "DiaperPull.gif",
@@ -27,7 +28,7 @@ var data = {
       {"image": "rearsymphony.gif",
         "text": "He laughed so long and hard, it matched my rear symphony.",
         "alt-text": "Various musical instruments are released by the bum and float across the screen. The instruments include violins, trumpets and timpanis.",
-        "audio":"05_rearsympony.mp3", 
+        "audio":"05_rearsympony.mp3",
       },
     ],
 }

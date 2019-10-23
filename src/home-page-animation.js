@@ -2,6 +2,8 @@ var titleCount = 1
 var spinEar = true
 // var visited = false
 
+// window.sessionStorage.setItem('visited', 'false')
+
 
 var interval = window.setInterval(function(){
 
@@ -31,8 +33,6 @@ var interval = window.setInterval(function(){
     footImg.setAttribute('src', 'assets/home-page/foot_small.png')
   }
 
-
-
   var ear = document.getElementById("ear");
 
   if (spinEar) {
@@ -59,7 +59,7 @@ function displayIntroCard() {
   document.body.prepend(modal)
 }
 
-if (window.sessionStorage.getItem('visited')=='false') {
+if (!window.sessionStorage.getItem('visited')) {
   displayIntroCard()
 }
 
