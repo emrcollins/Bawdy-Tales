@@ -135,7 +135,11 @@ function displaySlide(n) {
     } else currentSlideAudio.play()
   }
 
-  slideDivs[slideIndex].querySelector('img').focus()
+  if(slideDivs[slideIndex].querySelector('img')){
+    slideDivs[slideIndex].querySelector('img').focus()
+  } else {
+    slideDivs[slideIndex].querySelector('.text').focus()
+  }
 
 }
 
