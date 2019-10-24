@@ -63,16 +63,15 @@ if (!window.sessionStorage.getItem('visited')) {
   displayIntroCard()
 }
 
-
-window.addEventListener("keydown", event => {
+function handleModalClick(){
   var modal = document.getElementById("modal");
-  modal.style.display = 'none'
+  if (modal) modal.style.display = 'none'
   window.sessionStorage.setItem('visited', true)
-});
+  window.removeEventListener("click", handleModalClick)
+  window.removeEventListener("keydown", handleModalClick)
+}
 
-window.addEventListener('click', event => {
-  var modal = document.getElementById("modal");
-  modal.style.display = 'none'
-  window.sessionStorage.setItem('visited', true)
-});
+window.addEventListener("keydown", handleModalClick);
+window.addEventListener('click', handleModalClick);
+
 

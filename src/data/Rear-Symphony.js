@@ -2,7 +2,7 @@ var data = {
   "title": "Rear Symphony",
   "color": "cdf39c",
   "path": "assets/rear-symphony/",
-  "video": "https://vimeo.com/367596097",
+  "video": "https://player.vimeo.com/video/367596097",
   "slides":
     [
       {"image": "DiaperPull.gif",
