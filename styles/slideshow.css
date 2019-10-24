@@ -20,7 +20,7 @@
 
 #slideshow-container img {
   width: unset;
-  height: calc(100% - 66px);
+/*  height: calc(100% - 66px);*/
   display: block;
   margin: auto;
 }

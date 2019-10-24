@@ -21,7 +21,6 @@ function createTitleCard() {
   slideshowContainer.append(slideDiv)
 }
 
-
 function createEndCard() {
   let slideDiv = createSlide('end-slide')
 
@@ -52,7 +51,6 @@ function createSlide(extraClass, text) {
     slideText.setAttribute('tabindex', '2');
 
     slideText.innerText = text.replace('\n', '\r\n')
-
     slideDiv.appendChild(slideText)
   }
 
@@ -76,14 +74,9 @@ function createSlides() {
       slideImg.setAttribute('alt', slide["alt-text"])
       slideImg.setAttribute('tabindex', '1')
 
-      var textHeight = (slide.text.split('\n').length - 1) * 60 + 75
-      slideImg.style.height = 'calc(100% - ' + textHeight + 'px)'
-
       slideDiv.prepend(slideImg);
     }
-
     slideshowContainer.appendChild(slideDiv)
-
   })
 }
 
@@ -100,7 +93,6 @@ function displaySlide(n) {
     slideDiv.style.display = "none";
 
     let audio = slideDiv.querySelector('audio')
-
     if(audio) audio.pause()
   })
 
@@ -111,10 +103,15 @@ function displaySlide(n) {
       return;
     }
     slideshowContainer.appendChild(endCard)
+    return;
   } else {
-    slideDivs[slideIndex].style.display = "flex"
-  }
 
+    slideDivs[slideIndex].style.display = "flex"
+    let textHeight = slideDivs[slideIndex].querySelector('.text').getBoundingClientRect().height
+
+    let img = slideDivs[slideIndex].querySelector('img')
+    if(img) img.style.height = 'calc(100% - ' + textHeight + 'px)'
+  }
 
   let slide = slides[n-1]
 
