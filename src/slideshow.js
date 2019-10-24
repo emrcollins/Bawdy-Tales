@@ -89,7 +89,7 @@ function createSlides() {
 
 function displaySlide(n) {
 
-  if (n > slides.length) {
+  if (n > slides.length + 1) {
     window.location.href = "/"
     return;
   }
@@ -104,7 +104,7 @@ function displaySlide(n) {
     if(audio) audio.pause()
   })
 
-  if (n === slides.length) {
+  if (n === slides.length + 1) {
     let endCard = createEndCard()
     if (!endCard) {
       window.location.href = "/"
