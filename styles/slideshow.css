@@ -20,7 +20,6 @@
 
 #slideshow-container img {
   width: unset;
-/*  height: calc(100% - 66px);*/
   display: block;
   margin: auto;
 }
@@ -118,7 +117,7 @@
 }
 
 .title-slide {
-  font-family: 'Staatliches';
+  font-family: 'Staatliches', cursive;
   text-transform: uppercase;
 }
 
