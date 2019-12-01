@@ -52,7 +52,7 @@ div a.foot {
   position: absolute;
   top: 20%;
   right: 2%;
-
+  z-index: -1;
 }
 
 div a.foot img {
