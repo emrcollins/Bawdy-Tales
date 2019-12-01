@@ -42,6 +42,7 @@ div a.eye {
   /*bottom: 31%;*/
   bottom: 65%;
   right: 25%;
+  z-index: 5;
 }
 
 div a.eye img {
@@ -52,7 +53,7 @@ div a.foot {
   position: absolute;
   top: 20%;
   right: 2%;
-  z-index: -1;
+/*  z-index: -1;*/
 }
 
 div a.foot img {

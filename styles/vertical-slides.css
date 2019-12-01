@@ -1,0 +1,46 @@
+@import 'reset.css';
+@import 'site-wide.css';
+
+#homeIcon {
+  position: absolute;
+  width: 5%;
+  left: 12px;
+  top: 12px;
+}
+
+body {
+  overflow: scroll;
+}
+
+h1 {
+  padding-top: 24px;
+  color: #f09696;
+  font-size: 50px;
+}
+
+.vertical-slideshow {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.vertical-slideshow img {
+  width: 50%;
+}
+
+.vertical-slideshow .triple-image {
+  display: flex;
+  justify-content: center;
+}
+
+.vertical-slideshow .triple-image img {
+  width: 30%;
+}
+
+.vertical-slideshow div {
+  margin: 24px 0;
+}
+
+
