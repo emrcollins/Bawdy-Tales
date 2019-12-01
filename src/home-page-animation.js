@@ -52,7 +52,11 @@ function displayIntroCard() {
 
   let modalContent = document.createElement('div')
   modalContent.setAttribute('class', 'modal-content')
-  modalContent.textContent = '  You are about to enter a site that is made up of a collection of true stories written by Hansu Siirala. You may hit any icon to hear or view a story. Click on the photo of Hansu or the site title to learn more about the project. Click any key to continue.'
+
+  let modalText = document.createElement('div')
+  modalText.textContent = '  Welcome to a collection of true stories written by Hansu Siirala. Hit any icon to hear or view a story. Click on the photo of Hansu or the site title to learn more about the project. Click any key to continue.'
+
+  modalContent.appendChild(modalText)
 
   modal.appendChild(modalContent)
 

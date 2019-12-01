@@ -110,16 +110,28 @@ div.about a {
 
 .modal-content {
   background-color: black;
+  background-image: url('../assets/home-page/bushes_loop_sm.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+/*  padding: 20px;*/
   width: 80%; /* Could be more or less, depending on screen size */
-  height: 75vh;
+  height: 80vh;
   border-width: 20px;
   border-style: solid;
   border-image: url(../assets/home-page/modal_background.jpg) 50;
   color: white;
-  font-size: 50px;
   text-align: center;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.modal-content div {
+  background-color: black;
+  font-size: 36px;
+  padding: 0 12px 8px 12px;
 }
 
