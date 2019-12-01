@@ -4,6 +4,10 @@ var spinEar = true
 
 // window.sessionStorage.setItem('visited', 'false')
 
+var eyeCount = 1;
+// let blinked = false;
+var  eyeAnimationCount = 1;
+
 
 var interval = window.setInterval(function(){
 
@@ -45,6 +49,22 @@ var interval = window.setInterval(function(){
 
 
 }, 1000);
+
+var eyeAnimationInterval = window.setInterval(function(){
+  var eyeImg = document.getElementById('eye')
+  eyeAnimationCount++
+
+  if (eyeAnimationCount === 25){
+    eyeImg.setAttribute('src', `assets/home-page/Eye_02.png`)
+  } else if (eyeAnimationCount > 25 && eyeAnimationCount < 28){
+    eyeImg.setAttribute('src', `assets/home-page/Eye_03.png`)
+  } else if (eyeAnimationCount === 28) {
+    eyeImg.setAttribute('src', `assets/home-page/Eye_02.png`)
+  } else if(eyeAnimationCount > 28) {
+    eyeImg.setAttribute('src', `assets/home-page/Eye_01.png`)
+    eyeAnimationCount = 1
+  }
+}, 250);
 
 function displayIntroCard() {
   let modal = document.createElement('div')
