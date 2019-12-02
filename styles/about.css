@@ -1,5 +1,16 @@
-@import 'slideshow.css';
+/*@import 'slideshow.css';*/
 
+#homeIcon {
+  position: absolute;
+  width: 5%;
+  left: 12px;
+  top: 12px;
+}
+
+body {
+  overflow: scroll;
+  background-color: black;
+}
 div {
   display: flex;
   flex-direction: column;
@@ -13,19 +24,24 @@ div p {
   margin: auto;
 }
 
-div.about {
+div.about-content {
   color: white;
   margin: 16px 92px;
   font-size: 4vh;
-  text-align: center;
+  font-family: 'Oswald', sans-serif;
+/*  text-align: center;*/
+}
+
+div.about-content div {
+  margin: 24px 0;
 }
 
 div.about-content {
   justify-content: center;
-  height: 100vh;
+/*  height: 100vh;*/
 }
 
 div.video-player {
-  height: 75%;
+/*  height: 75%;*/
   padding-top: 2%;
 }
