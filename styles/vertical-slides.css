@@ -16,6 +16,7 @@ h1 {
   padding-top: 24px;
   color: #f09696;
   font-size: 7vw;
+  text-align: center;
 }
 
 .vertical-slideshow {
@@ -40,7 +41,13 @@ h1 {
 }
 
 .vertical-slideshow div {
-  margin: 24px 0;
+  margin: 72px 0;
+  text-align: left;
 }
+
+/*.vertical-slideshow img {
+  margin: 0 auto;
+  padding: 24px 0;
+}*/
 
 
