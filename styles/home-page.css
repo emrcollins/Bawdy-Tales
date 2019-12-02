@@ -5,12 +5,6 @@ body {
   display: flex;
 }
 
-/*div a img {
-  display: inline-block;
-/*  position: absolute;*/
-/*}
-*/
-
 div a img {
 
 }
@@ -28,7 +22,6 @@ div a.ear {
   position: relative;
   bottom: -37%;
   right: -1%;
-/*  right: 314px;*/
 }
 
 div a.ear img {
@@ -37,16 +30,14 @@ div a.ear img {
 
 div a.eye {
   position: absolute;
-/*  top: -163px;
-  right: 219px;*/
-  /*bottom: 31%;*/
   bottom: 65%;
-  right: 25%;
+  right: 24%;
   z-index: 5;
 }
 
 div a.eye img {
-  height: 28vh;
+  height: 32vh;
+  transform: rotate(20deg)
 }
 
 div a.foot {
