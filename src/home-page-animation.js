@@ -54,13 +54,13 @@ var eyeAnimationInterval = window.setInterval(function(){
   var eyeImg = document.getElementById('eye')
   eyeAnimationCount++
 
-  if (eyeAnimationCount === 25){
+  if (eyeAnimationCount === 12){
     eyeImg.setAttribute('src', `assets/home-page/Eye_02.png`)
-  } else if (eyeAnimationCount > 25 && eyeAnimationCount < 28){
+  } else if (eyeAnimationCount > 12 && eyeAnimationCount < 15){
     eyeImg.setAttribute('src', `assets/home-page/Eye_03.png`)
-  } else if (eyeAnimationCount === 28) {
+  } else if (eyeAnimationCount === 15) {
     eyeImg.setAttribute('src', `assets/home-page/Eye_02.png`)
-  } else if(eyeAnimationCount > 28) {
+  } else if(eyeAnimationCount > 15) {
     eyeImg.setAttribute('src', `assets/home-page/Eye_01.png`)
     eyeAnimationCount = 1
   }
