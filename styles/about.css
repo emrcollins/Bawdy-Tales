@@ -24,12 +24,26 @@ div p {
   margin: auto;
 }
 
+div.doves {
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+div.doves img {
+  max-width: 33%;
+}
+
+div.collaborators {
+  flex-direction: row;
+  align-items: center;
+}
+
 div.about-content {
   color: white;
   margin: 16px 92px;
   font-size: 4vh;
   font-family: 'Oswald', sans-serif;
-/*  text-align: center;*/
 }
 
 div.about-content div {
@@ -38,10 +52,8 @@ div.about-content div {
 
 div.about-content {
   justify-content: center;
-/*  height: 100vh;*/
 }
 
 div.video-player {
-/*  height: 75%;*/
   padding-top: 2%;
 }
