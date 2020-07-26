@@ -2,7 +2,7 @@ var slideIndex = 0;
 var slides = data.slides
 var slideshowContainer = document.getElementById("slideshow-container");
 
-let audioPaused = false;
+// let audioPaused = false;
 
 window.addEventListener("keydown", function(event) {
   if (event.key==="ArrowRight" || event.key===" "){

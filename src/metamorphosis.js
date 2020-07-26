@@ -5,6 +5,7 @@ scrollAudio.setAttribute('class', 'player')
 
 let audioSource = document.createElement('source')
 audioSource.setAttribute('src', 'assets/metamorphosis/audio/Metamorphosis_v2.wav')
+audioSource.setAttribute('loop', 'loop')
 
 if(window.sessionStorage.getItem('volume')) scrollAudio.volume = window.sessionStorage.getItem('volume')
 if(window.sessionStorage.getItem('muted')=='true') scrollAudio.muted = window.sessionStorage.getItem('muted')
