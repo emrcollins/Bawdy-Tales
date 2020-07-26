@@ -39,6 +39,12 @@ div.collaborators {
   align-items: center;
 }
 
+div.collaborators img {
+  max-width: 50%;
+  transform: rotate(30deg);
+  margin-left: 10%
+}
+
 div.about-content {
   color: white;
   margin: 16px 92px;
