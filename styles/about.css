@@ -24,14 +24,8 @@ div p {
   margin: auto;
 }
 
-div.doves {
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-}
-
-div.doves img {
-  max-width: 33%;
+.allDoves {
+  max-width: 100%;
 }
 
 div.collaborators {
