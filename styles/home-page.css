@@ -5,8 +5,13 @@ body {
   display: flex;
 }
 
-div a img {
-
+a.pdf {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    text-decoration: none;
+    color: rgb(240, 150, 150);
+    font-size: 20px;
 }
 
 div.about {
